@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http:/thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<form method="post" action="/students/editStudent" th:object="${studentToEdit}">
+    <input type="text" name="nama", placeholder="Nama" th:value="${studentToEdit.nama}">
+    <input type="number" name="nim", placeholder="NIM" th:value="${studentToEdit.nim}">
+    <input type="text" name="alamat", placeholder="Alamat" th:value="${studentToEdit.alamat}">
+    <input type="text" name="tanggallahir", placeholder="Tanggal Lahir" th:value="${studentToEdit.tanggallahir}">
+    <input type="submit" value="Simpan Edit">
+</form>
+</body>
+</html>
