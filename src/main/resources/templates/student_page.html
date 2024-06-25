@@ -14,6 +14,7 @@ Data Student
         <td>NIM</td>
         <td>Alamat</td>
         <td>Tanggal Lahir</td>
+        <td>Aksi</td>
     </tr>
     </thead>
     <tbody>
@@ -23,6 +24,10 @@ Data Student
             <td th:text="${student.nim}"></td>
             <td th:text="${student.alamat}"></td>
             <td th:text="${student.tanggallahir}"></td>
+            <td>
+                <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
+                <a th:href="@{/students/delete/{id}(id=${student.id})}">Hapus</a>
+            </td>
         </tr>
     </tbody>
 </table>

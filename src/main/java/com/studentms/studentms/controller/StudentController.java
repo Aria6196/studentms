@@ -53,10 +53,9 @@ public class StudentController {
         return "redirect:/students";
     }
 
-    @GetMapping("/edit/{nama}")
-    public String getEditStudentPage(Model model, @PathVariable String nama){
-        studentService.findByNama(nama);
-        StudentModel byNama = studentService.findByNama(nama);
+    @GetMapping("/edit/{id}")
+    public String getEditStudentPage(Model model, @PathVariable Long id){
+        StudentModel byNama = studentService.findById(id);
         model.addAttribute("studentToEdit", byNama);
         return "edit_student_page";
     }
@@ -67,9 +66,9 @@ public class StudentController {
         return "redirect:/students";
     }
 
-    @GetMapping("/delete/{nama}")
-    public String delete(@PathVariable String nama){
-        studentService.delete(nama);
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable Long id){
+        studentService.delete(id);
         return "redirect:/students";
     }
 }

@@ -6,11 +6,12 @@
 </head>
 <body>
 <form method="post" action="/students/editStudent" th:object="${studentToEdit}">
+    <input type="hidden" th:field="*{id}">
     <input type="text" name="nama" placeholder="Nama" th:value="*{nama}">
     <input type="number" name="nim" placeholder="NIM" th:value="*{nim}">
     <input type="text" name="alamat" placeholder="Alamat" th:value="*{alamat}">
     <input type="text" name="tanggallahir" placeholder="Tanggal Lahir" th:value="*{tanggallahir}">
-    <input type="submit" value="Simpan Edit">
+    <input type="submit" value="Simpan Edit">j
 </form>
 </body>
 </html>

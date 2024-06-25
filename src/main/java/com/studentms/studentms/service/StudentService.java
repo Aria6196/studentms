@@ -47,15 +47,15 @@ public class StudentService {
                 .orElseThrow(() -> new IllegalArgumentException("Student not found"));
     }
 
-    public void edit(StudentModel student) {
-        StudentModel existingStudent = findByNama(student.getNama());
-        existingStudent.setNim(student.getNim());
-        existingStudent.setAlamat(student.getAlamat());
-        existingStudent.setTanggallahir(student.getTanggallahir());
+    public StudentModel findById(Long id) {
+        return studentRepository.findById(id).orElseThrow(() -> new RuntimeException("Data tidak ditemujan"));
     }
 
-    public void delete(String nama) {
-        StudentModel student = findByNama(nama);
-        students.remove(student);
+    public void edit(StudentModel student) {
+        studentRepository.save(student);
+    }
+
+    public void delete(Long id) {
+        studentRepository.deleteById(id);
     }
 }
