@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+Data Student
+<table>
+    <thead>
+    <tr>
+        <td>No</td>
+        <td>Nama</td>
+        <td>NIM</td>
+        <td>Alamat</td>
+        <td>Tanggal Lahir</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="student : ${userStudents}">
+            <td th:text="${student.id}"></td>
+            <td th:text="${student.nama}"></td>
+            <td th:text="${student.nim}"></td>
+            <td th:text="${student.alamat}"></td>
+            <td th:text="${student.tanggallahir}"></td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

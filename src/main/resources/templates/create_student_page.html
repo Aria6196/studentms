@@ -6,10 +6,10 @@
 </head>
 <body>
 <form method="post" action="/students/createStudent" th:object="${newStudent}">
-    <input type="text" name="nama", placeholder="Nama">
-    <input type="number" name="nim", placeholder="NIM">
-    <input type="text" name="alamat", placeholder="Alamat">
-    <input type="text" name="tanggallahir", placeholder="Tanggal Lahir">
+    <input type="text" th:field="*{nama}", placeholder="Nama">
+    <input type="number" th:field="*{nim}", placeholder="NIM">
+    <input type="text" th:field="*{alamat}", placeholder="Alamat">
+    <input type="text" th:field="*{tanggallahir}", placeholder="Tanggal Lahir">
     <input type="submit" value="Simpan">
 </form>
 </body>

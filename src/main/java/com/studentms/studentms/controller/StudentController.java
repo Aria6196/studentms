@@ -3,8 +3,8 @@ package com.studentms.studentms.controller;
 import com.studentms.studentms.model.StudentModel;
 import com.studentms.studentms.service.StudentService;
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,9 @@ import java.util.List;
 public class StudentController {
 
     public static final String USER_LOGIN = "userLogin";
-    private final StudentService studentService;
+
+    @Autowired
+    private StudentService studentService;
 
     @GetMapping
     public String getStudentPage(@RequestParam(required = false, name = "login") String login,
@@ -25,17 +27,17 @@ public class StudentController {
                                  Model model,
                                  HttpServletRequest request){
 
-        HttpSession session = request.getSession();
-        if(login != null && !login.isEmpty()){
-            session.setAttribute(USER_LOGIN, login);
-        }
+//        HttpSession session = request.getSession();
+//        if(login != null && !login.isEmpty()){
+//            session.setAttribute(USER_LOGIN, login);
+//        }
+//
+//        String userLogin = (String) session.getAttribute(USER_LOGIN);
+//
+//        model.addAttribute(USER_LOGIN, login);
 
-        String userLogin = (String) session.getAttribute(USER_LOGIN);
-
-        model.addAttribute(USER_LOGIN, login);
-
-        List<StudentModel> students = studentService.getAllStudentsByLogin(userLogin);
-
+//        List<StudentModel> students = studentService.getAllStudentsByLogin(userLogin);
+        List<StudentModel> students = studentService.getAllStudents();
         model.addAttribute("userStudents", students);
         return "student_page";
     }
