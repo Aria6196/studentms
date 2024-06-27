@@ -14,13 +14,6 @@ public class StudentService {
     private StudentRepository studentRepository;
     private static List<StudentModel> students;
 
-    static {
-        students = new ArrayList<>();
-        students.add(new StudentModel("Aria Octavian Hamza", 25, "NH", "29 Oktober 2004"));
-        students.add(new StudentModel("Aria Hamza", 26, "H", "29 Oktober 2004"));
-        students.add(new StudentModel("Aria Hamza", 27, "N", "29 Oktober 2004"));
-    }
-
     public List<StudentModel> getAllStudentsByLogin(String login) {
         if (login != null) {
             // Logika berdasarkan login bisa ditambahkan di sini

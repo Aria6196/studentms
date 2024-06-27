@@ -1,72 +1,122 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Manajemen Data Mahasiswa</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        position: relative;
+      }
 
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
+      .top-background {
+        width: 100%;
+        height: 150px;
+        background-image: url("../image/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+      }
 
-        input[type="text"],
-        input[type="number"],
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
+      .bottom-background {
+        width: 100%;
+        height: 150px;
+        background-image: url("../image/bg.jpg");
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        bottom: 0;
+        z-index: -1;
+      }
 
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
 
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
+      input[type="text"],
+      input[type="number"],
+      input[type="date"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
 
-        input[type="text"]:focus,
-        input[type="number"]:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
+      input::placeholder {
+        color: #aaa;
+        font-size: 14px;
+      }
 
-        h2 {
-            text-align: center;
-            color: #333;
-        }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+
+      input[type="text"]:focus,
+      input[type="number"]:focus,
+      input[type="date"]:focus {
+        border-color: #4caf50;
+        outline: none;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+      }
     </style>
-</head>
-<body>
-<form method="post" action="/students/createStudent" th:object="${newStudent}">
-    <h2>Create Student</h2>
-    <input type="text" th:field="*{nama}" placeholder="Nama">
-    <input type="number" th:field="*{nim}" placeholder="NIM">
-    <input type="text" th:field="*{alamat}" placeholder="Alamat">
-    <input type="text" th:field="*{tanggallahir}" placeholder="Tanggal Lahir">
-    <input type="submit" value="Simpan">
-</form>
-</body>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var input = document.querySelector('input[type="number"]');
+        if (input) {
+          input.value = ""; // Mengosongkan nilai input number
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div class="top-background"></div>
+    <form
+      method="post"
+      action="/students/createStudent"
+      th:object="${newStudent}"
+    >
+      <h2>Buat Data Mahasiswa</h2>
+      <input type="text" th:field="*{nama}" placeholder="Nama" />
+      <input type="number" th:field="*{nim}" placeholder="NIM" value="" />
+      <input type="text" th:field="*{alamat}" placeholder="Alamat" />
+      <input
+        id="Tanggal Lahir"
+        type="date"
+        th:field="*{tanggallahir}"
+        placeholder="Tanggal Lahir"
+      />
+      <input type="submit" value="Simpan" />
+    </form>
+    <div class="bottom-background"></div>
+  </body>
 </html>

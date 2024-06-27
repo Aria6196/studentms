@@ -1,5 +1,8 @@
 package com.studentms.studentms.model;
 
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -20,10 +23,11 @@ public class StudentModel {
     private int nim;
     @Column
     private String alamat;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column
-    private String tanggallahir;
+    private Date tanggallahir;
 
-    public StudentModel(String nama, int nim, String alamat, String tanggallahir) {
+    public StudentModel(String nama, int nim, String alamat, Date tanggallahir) {
         this.nama = nama;
         this.nim = nim;
         this.alamat = alamat;

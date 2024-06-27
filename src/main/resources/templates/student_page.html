@@ -1,126 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Halaman Mahasiswa</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding-top: 50px;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+      }
 
-        .container {
-            width: 80%;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            padding: 20px;
-        }
+      .container {
+        width: 80%;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        padding: 20px;
+      }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
 
-        h1 {
-            margin: 0;
-            color: #333;
-        }
+      h1 {
+        margin: 0;
+        color: #333;
+      }
 
-        .create-button {
-            text-decoration: none;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-        }
+      .create-button {
+        text-decoration: none;
+        background-color: #4caf50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: bold;
+        cursor: pointer;
+      }
 
-        .create-button:hover {
-            background-color: #45a049;
-        }
+      .create-button:hover {
+        background-color: #45a049;
+      }
 
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
 
-        th, td {
-            text-align: left;
-            padding: 12px;
-            border-bottom: 1px solid #ddd;
-        }
+      th,
+      td {
+        text-align: left;
+        padding: 12px;
+        border-bottom: 1px solid #ddd;
+      }
 
-        th {
-            background-color: #4CAF50;
-            color: white;
-        }
+      th {
+        background-color: #4caf50;
+        color: white;
+      }
 
-        tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
+      tr:nth-child(even) {
+        background-color: #f2f2f2;
+      }
 
-        tr:hover {
-            background-color: #f1f1f1;
-        }
+      tr:hover {
+        background-color: #f1f1f1;
+      }
 
-        a {
-            text-decoration: none;
-            color: #4CAF50;
-            font-weight: bold;
-        }
+      a {
+        text-decoration: none;
+        color: #4caf50;
+        font-weight: bold;
+      }
 
-        a:hover {
-            text-decoration: underline;
-        }
+      a:hover {
+        text-decoration: underline;
+      }
 
-        .action-links {
-            display: flex;
-            gap: 10px;
-        }
+      .action-links {
+        display: flex;
+        gap: 10px;
+      }
     </style>
-</head>
-<body>
-<div class="container">
-    <div class="header">
-        <h1>Data Student</h1>
-        <a href="http://localhost:8080/students/create" class="create-button">Create Student</a>
-    </div>
-    <table>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h1>Data Mahasiswa</h1>
+        <a href="http://localhost:8080/students/create" class="create-button"
+          >Buat Data Mahasiswa</a
+        >
+      </div>
+      <table>
         <thead>
-        <tr>
+          <tr>
             <th>No.</th>
             <th>Nama</th>
             <th>NIM</th>
             <th>Alamat</th>
             <th>Tanggal Lahir</th>
-            <th>Aksi</th>
-        </tr>
+            <th></th>
+          </tr>
         </thead>
         <tbody>
-        <tr th:each="student : ${userStudents}">
-            <td th:text="${student.id}"></td>
+          <tr th:each="student, stat : ${userStudents}">
+            <td th:text="${stat.count}"></td>
             <td th:text="${student.nama}"></td>
             <td th:text="${student.nim}"></td>
             <td th:text="${student.alamat}"></td>
-            <td th:text="${student.tanggallahir}"></td>
+            <td
+              th:text="${#dates.format(student.tanggallahir, 'dd-MM-yyyy')}"
+            ></td>
             <td class="action-links">
-                <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
-                <a th:href="@{/students/delete/{id}(id=${student.id})}">Hapus</a>
+              <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
+              <a th:href="@{/students/delete/{id}(id=${student.id})}">Hapus</a>
             </td>
-        </tr>
+          </tr>
         </tbody>
-    </table>
-</div>
-</body>
+      </table>
+    </div>
+  </body>
 </html>

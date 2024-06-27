@@ -1,82 +1,95 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>Edit</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Edit Data Mahasiswa</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
 
-        form {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-        }
+      form {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
 
-        input[type="text"],
-        input[type="number"],
-        input[type="submit"] {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-            font-size: 16px;
-        }
+      input[type="text"],
+      input[type="number"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
 
-        input[type="submit"] {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-            font-weight: bold;
-        }
+      input[type="submit"] {
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-        input[type="submit"]:hover {
-            background-color: #45a049;
-        }
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
 
-        input[type="text"]:focus,
-        input[type="number"]:focus {
-            border-color: #4CAF50;
-            outline: none;
-        }
+      input[type="text"]:focus,
+      input[type="number"]:focus {
+        border-color: #4caf50;
+        outline: none;
+      }
 
-        h2 {
-            text-align: center;
-            color: #333;
-        }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
 
-        .form-title {
-            text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 20px;
-            color: #333;
-        }
-
+      .form-title {
+        text-align: center;
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #333;
+      }
     </style>
-</head>
-<body>
-<form method="post" action="/students/editStudent" th:object="${studentToEdit}">
-    <div class="form-title">Edit Student</div>
-    <input type="hidden" th:field="*{id}">
-    <input type="text" name="nama" placeholder="Nama" th:value="*{nama}">
-    <input type="number" name="nim" placeholder="NIM" th:value="*{nim}">
-    <input type="text" name="alamat" placeholder="Alamat" th:value="*{alamat}">
-    <input type="text" name="tanggallahir" placeholder="Tanggal Lahir" th:value="*{tanggallahir}">
-    <input type="submit" value="Simpan Edit">
-</form>
-</body>
+  </head>
+  <body>
+    <form
+      method="post"
+      action="/students/editStudent"
+      th:object="${studentToEdit}"
+    >
+      <div class="form-title">Edit Mahasiswa</div>
+      <input type="hidden" th:field="*{id}" />
+      <input type="text" name="nama" placeholder="Nama" th:value="*{nama}" />
+      <input type="number" name="nim" placeholder="NIM" th:value="*{nim}" />
+      <input
+        type="text"
+        name="alamat"
+        placeholder="Alamat"
+        th:value="*{alamat}"
+      />
+      <input
+        type="date"
+        name="tanggallahir"
+        placeholder="Tanggal Lahir"
+        th:value="*{tanggallahir}"
+      />
+      <input type="submit" value="Simpan Edit" />
+    </form>
+  </body>
 </html>
