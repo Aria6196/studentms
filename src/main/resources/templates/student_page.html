@@ -6,7 +6,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: black;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,19 +16,25 @@
         }
 
         .container {
-            width: 80%;
+            width: 90%;
             background: white;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             padding: 20px;
+            margin-bottom: 20px; /* Add margin-bottom for spacing between sections */
         }
 
         .header {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: column;
+            align-items: center; /* Center align the header text */
             margin-bottom: 20px;
+        }
+
+        .header p {
+            text-align: center; /* Center align the paragraph text */
+            color: #333;
         }
 
         h1 {
@@ -44,6 +50,7 @@
             border-radius: 4px;
             font-weight: bold;
             cursor: pointer;
+            align-self: flex-end; /* Align the create button to the right */
         }
 
         .create-button:hover {
@@ -88,12 +95,67 @@
             display: flex;
             gap: 10px;
         }
+
+        /* About Us Section */
+
+        .halaman3 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            margin-top: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .image-container {
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            width: 300px; /* Adjust width as needed */
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .description {
+            text-align: justify;
+        }
+
+        .description h4 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .description p {
+            color: #666;
+            line-height: 1.6;
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h1>Data Student</h1>
+        <h1>Web Manajemen Data Mahasiswa</h1>
+    </div>
+
+    <!-- About Us Section -->
+        <div class="description">
+            <h1>Tentang Kami</h1>
+            <p>Kami adalah tim kecil yang terdiri dari tiga mahasiswa yang berkomitmen untuk memberikan pendidikan terbaik bagi setiap siswa kami. Meskipun kami kecil, kami memiliki semangat dan dedikasi yang besar untuk membantu setiap siswa mencapai potensi mereka. Dengan pendekatan kolaboratif dan inovatif, kami menggunakan sumber daya yang tersedia dengan efektif untuk mendukung pengalaman belajar yang mendalam dan berarti. Kami percaya bahwa melalui upaya bersama, kami dapat menciptakan lingkungan belajar yang inklusif dan mendukung, mempersiapkan siswa untuk sukses di masa depan.</p>
+        </div>
+</div>
+
+<!-- tabel data mahasiswa -->
+<div class="container">
+    <div class="header">
+        <h1>Data Mahasiswa</h1>
         <a href="http://localhost:8080/students/create" class="create-button">Create Student</a>
     </div>
     <table>
@@ -122,5 +184,6 @@
         </tbody>
     </table>
 </div>
+
 </body>
 </html>
