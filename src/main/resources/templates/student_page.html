@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <title>Halaman Mahasiswa</title>
@@ -100,6 +101,143 @@
         >
       </div>
       <table>
+=======
+<head>
+    <meta charset="UTF-8">
+    <title>Web Manajemen Data Mahasiswa</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: black; /* Background putih */
+            color: #333; /* Warna teks gelap */
+        }
+
+        .container {
+            margin: 0px;
+            padding: 0px;
+            background-color: white; /* Latar belakang kontainer putih */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Bayangan tipis */
+        }
+
+        .description {
+            background-color: white; /* Latar belakang deskripsi putih */
+            color: #333; /* Warna teks gelap */
+            padding: 20px;
+            border-radius: 0px;
+            margin-top: 1px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Bayangan tipis */
+        }
+
+        .description h1 {
+            margin-bottom: 10px;
+            color: #333; /* Warna teks gelap */
+        }
+
+        .description p {
+            line-height: 1.6;
+            color: #333; /* Warna teks gelap */
+        }
+
+        .data-container {
+            background-color: white; /* Latar belakang konten data putih */
+            color: #333; /* Warna teks gelap */
+            padding: 20px;
+            border-radius: 0px;
+            margin-top: 10px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Bayangan tipis */
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: white; /* Latar belakang tabel putih */
+            color: #333; /* Warna teks gelap */
+            border-radius: 50px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Bayangan tipis */
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f0f0f0; /* Warna latar belakang header kolom */
+            color: #333; /* Warna teks gelap */
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Warna latar belakang baris genap */
+        }
+
+        .create-button {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+            float: left; /* Membuat tombol berada di sebelah kiri */
+            margin-bottom: 10px;
+        }
+
+        .create-button:hover {
+            background-color: #0056b3; /* Warna tombol biru saat dihover */
+        }
+
+        .action-links a {
+            margin-right: 10px;
+            padding: 5px 10px;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333; /* Warna teks gelap */
+        }
+
+        .action-links a.edit {
+            background-color: #007bff; /* Warna tombol edit biru */
+            color: white; /* Warna teks putih */
+        }
+
+        .action-links a.delete {
+            background-color: #dc3545; /* Warna tombol hapus merah */
+            color: white; /* Warna teks putih */
+        }
+
+        .action-links a:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+<div class="container description">
+    <div class="header">
+        <h1>Web Manajemen Data Mahasiswa</h1>
+    </div>
+
+    <!-- Halaman tentang About Us Section -->
+    <div>
+        <h1>Tentang Kami</h1>
+        <p>Kami adalah tim kecil yang terdiri dari tiga mahasiswa yang berkomitmen untuk memberikan pendidikan terbaik bagi setiap siswa kami. Meskipun kami kecil, kami memiliki semangat dan dedikasi yang besar untuk membantu setiap siswa mencapai potensi mereka. Dengan pendekatan kolaboratif dan inovatif, kami menggunakan sumber daya yang tersedia dengan efektif untuk mendukung pengalaman belajar yang mendalam dan berarti. Kami percaya bahwa melalui upaya bersama, kami dapat menciptakan lingkungan belajar yang inklusif dan mendukung, mempersiapkan siswa untuk sukses di masa depan.</p>
+    </div>
+</div>
+
+<!-- Halaman tentang tabel data mahasiswa -->
+<div class="container data-container">
+    <div class="header">
+        <h1>Data Mahasiswa</h1>
+        <a href="http://localhost:8080/students/create" class="create-button">Create Student</a>
+    </div>
+    <table>
+>>>>>>> 07078b6a40347332f8145029305261c3a0959295
         <thead>
           <tr>
             <th>No.</th>
@@ -120,8 +258,13 @@
               th:text="${#dates.format(student.tanggallahir, 'dd-MM-yyyy')}"
             ></td>
             <td class="action-links">
+<<<<<<< HEAD
               <a th:href="@{/students/edit/{id}(id=${student.id})}">Edit</a>
               <a th:href="@{/students/delete/{id}(id=${student.id})}">Hapus</a>
+=======
+                <a th:href="@{/students/edit/{id}(id=${student.id})}" class="edit">Edit</a>
+                <a th:href="@{/students/delete/{id}(id=${student.id})}" class="delete">Hapus</a>
+>>>>>>> 07078b6a40347332f8145029305261c3a0959295
             </td>
           </tr>
         </tbody>

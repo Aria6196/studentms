@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <title>Edit Data Mahasiswa</title>
     <style>
+<<<<<<< HEAD
       body {
         font-family: Arial, sans-serif;
         background-color: #f4f4f4;
@@ -14,6 +15,18 @@
         align-items: center;
         height: 100vh;
       }
+=======
+        body {
+            font-family: Arial, sans-serif;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+>>>>>>> 07078b6a40347332f8145029305261c3a0959295
 
       form {
         background: white;
@@ -53,6 +66,7 @@
         outline: none;
       }
 
+<<<<<<< HEAD
       h2 {
         text-align: center;
         color: #333;
@@ -93,3 +107,26 @@
     </form>
   </body>
 </html>
+=======
+        .form-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/students/editStudent" th:object="${studentToEdit}">
+    <div class="form-title">Edit Student</div>
+    <input type="hidden" th:field="*{id}">
+    <input type="text" name="nama" placeholder="Nama" th:value="*{nama}">
+    <input type="number" name="nim" placeholder="NIM" th:value="*{nim}">
+    <input type="text" name="alamat" placeholder="Alamat" th:value="*{alamat}">
+    <input type="text" name="tanggallahir" placeholder="Tanggal Lahir" th:value="*{tanggallahir}">
+    <input type="submit" value="Simpan Edit">
+</form>
+</body>
+</html>
+>>>>>>> 07078b6a40347332f8145029305261c3a0959295
