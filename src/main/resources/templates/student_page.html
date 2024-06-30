@@ -6,44 +6,37 @@
     <style>
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: black; /* Background putih */
-            color: #333; /* Warna teks gelap */
+            padding: 0;
+            font-family: 'Verdana', sans-serif;
+            background-color: black;
+            color: black;
         }
 
         .container {
-            margin: 0px;
-            padding: 0px;
-            background-color: white; /* Latar belakang kontainer putih */
-            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Bayangan tipis */
+            margin: 20px auto;
+            padding: 0;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            max-width: 1200px;
         }
 
-        .description {
-            background-color: white; /* Latar belakang deskripsi putih */
-            color: #333; /* Warna teks gelap */
+        .description, .data-container {
+            background-color: white;
+            color: black;
             padding: 20px;
-            border-radius: 0px;
-            margin-top: 1px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Bayangan tipis */
+            border-radius: 0;
+            margin-top: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
 
-        .description h1 {
+        .description h1, .data-container h1 {
             margin-bottom: 10px;
-            color: #333; /* Warna teks gelap */
+            color: black;
         }
 
         .description p {
             line-height: 1.6;
-            color: #333; /* Warna teks gelap */
-        }
-
-        .data-container {
-            background-color: white; /* Latar belakang konten data putih */
-            color: #333; /* Warna teks gelap */
-            padding: 20px;
-            border-radius: 0px;
-            margin-top: 10px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Bayangan tipis */
+            color: black;
         }
 
         .header {
@@ -55,10 +48,10 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
-            background-color: white; /* Latar belakang tabel putih */
-            color: #333; /* Warna teks gelap */
+            background-color: white;
+            color: black;
             border-radius: 50px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Bayangan tipis */
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
         }
 
         th, td {
@@ -68,12 +61,12 @@
         }
 
         th {
-            background-color: #f0f0f0; /* Warna latar belakang header kolom */
-            color: #333; /* Warna teks gelap */
+            background-color: #f0f0f0;
+            color: black;
         }
 
         tr:nth-child(even) {
-            background-color: #f9f9f9; /* Warna latar belakang baris genap */
+            background-color: #f9f9f9;
         }
 
         .create-button {
@@ -84,12 +77,12 @@
             text-decoration: none;
             border-radius: 4px;
             transition: background-color 0.3s ease;
-            float: left; /* Membuat tombol berada di sebelah kiri */
+            float: left;
             margin-bottom: 10px;
         }
 
         .create-button:hover {
-            background-color: #0056b3; /* Warna tombol biru saat dihover */
+            background-color: #0056b3;
         }
 
         .action-links a {
@@ -97,21 +90,72 @@
             padding: 5px 10px;
             border-radius: 4px;
             text-decoration: none;
-            color: #333; /* Warna teks gelap */
+            color: black;
         }
 
         .action-links a.edit {
-            background-color: #007bff; /* Warna tombol edit biru */
-            color: white; /* Warna teks putih */
+            background-color: #007bff;
+            color: white;
         }
 
         .action-links a.delete {
-            background-color: #dc3545; /* Warna tombol hapus merah */
-            color: white; /* Warna teks putih */
+            background-color: #dc3545;
+            color: white;
         }
 
         .action-links a:hover {
             opacity: 0.8;
+        }
+
+        .text_deskripsi {
+            font-size: 20px;
+        }
+
+        .site-footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px 0; /* Padding diatur agar footer terlihat seragam */
+            margin-top: 20px;
+        }
+
+        h1, h5 {
+            margin-top: 20px;
+            font-size: 24px; /* Ukuran font diatur agar seragam */
+            margin: 10px 0;
+            color: black;
+        }
+
+        h5{
+            margin-top: 50px;
+        }
+
+        .footkontak {
+            text-decoration: none;
+            color: black;
+            margin: 5px 0;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+
+        .footer-links li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        .footer-links li a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .text-center {
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -121,14 +165,12 @@
         <h1>Web Manajemen Data Mahasiswa</h1>
     </div>
 
-    <!-- Halaman tentang About Us Section -->
     <div>
         <h1>Tentang Kami</h1>
-        <p>Kami adalah tim kecil yang terdiri dari tiga mahasiswa yang berkomitmen untuk memberikan pendidikan terbaik bagi setiap siswa kami. Meskipun kami kecil, kami memiliki semangat dan dedikasi yang besar untuk membantu setiap siswa mencapai potensi mereka. Dengan pendekatan kolaboratif dan inovatif, kami menggunakan sumber daya yang tersedia dengan efektif untuk mendukung pengalaman belajar yang mendalam dan berarti. Kami percaya bahwa melalui upaya bersama, kami dapat menciptakan lingkungan belajar yang inklusif dan mendukung, mempersiapkan siswa untuk sukses di masa depan.</p>
+        <p class="text_deskripsi">Kami adalah tim kecil yang terdiri dari tiga mahasiswa yang berkomitmen untuk memberikan pendidikan terbaik bagi setiap siswa kami. Meskipun tim kami kecil, kami telah mengembangkan aplikasi "Web Manajemen Data Mahasiswa" yang memungkinkan pengguna melakukan operasi CRUD (Create, Read, Update, Delete) pada data mahasiswa. Aplikasi ini diimplementasikan dengan konsep OOP untuk mengelola data mahasiswa secara efektif dan efisien.</p>
     </div>
 </div>
 
-<!-- Halaman tentang tabel data mahasiswa -->
 <div class="container data-container">
     <div class="header">
         <h1>Data Mahasiswa</h1>
@@ -160,5 +202,33 @@
         </tbody>
     </table>
 </div>
+
+<!-- Halaman footer -->
+    <div class="container description">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>Kelompok 6</h1>
+                <p class="footkontak">Anggota 1: AHMAD BADRU AL HUSAENI, NIM 1227050009</p>
+                <p class="footkontak">Anggota 2: ARIA OCTAVIAN HAMZA, NIM 1227050025</p>
+                <p class="footkontak">Anggota 3: DIKA HAEKAL FIRZA PRATAMA, NIM 1227050036</p>
+            </div>
+            <div class="col-md-4">
+                <h5>Sosial Media</h5>
+                <ul class="footer-links">
+                    <li><a href="https://wa.me/62813540873662/?text=">WhatsApp</a></li>
+                    <li><a href="https://www.instagram.com/dikahaekal/">Instagram</a></li>
+                    <li><a href="#">Facebook</a></li>
+                    <li><a href="https://twitter.com/explore">Twitter</a></li>
+                    <li><a href="https://www.google.com/intl/id/gmail/about/">Email</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <p class="footkontak">&copy; 2024 Web Manajemen Data Mahasiswa. Hak Cipta Dilindungi.</p>
+        </div>
+    </div>
+<!-- Halaman footer -->
+
 </body>
 </html>
