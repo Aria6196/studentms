@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Edit</title>
+    <title>Edit Data Mahasiswa</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: black;
+            background: linear-gradient(to bottom, red 50%, white 50%);
             margin: 0;
             padding: 0;
             display: flex;
@@ -18,9 +18,9 @@
         form {
             background: white;
             padding: 20px;
-            border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             width: 300px;
+            border: 5px solid black;
         }
 
         input[type="text"],
@@ -30,7 +30,6 @@
             padding: 10px;
             margin: 10px 0;
             border: 1px solid #ccc;
-            border-radius: 4px;
             box-sizing: border-box;
             font-size: 16px;
         }
@@ -64,7 +63,7 @@
 </head>
 <body>
 <form method="post" action="/students/editStudent" th:object="${studentToEdit}">
-    <div class="form-title">Edit Student</div>
+    <div class="form-title">Edit Data Mahasiswa</div>
     <input type="hidden" th:field="*{id}">
     <input type="text" name="nama" placeholder="Nama" th:value="*{nama}">
     <input type="number" name="nim" placeholder="NIM" th:value="*{nim}">
