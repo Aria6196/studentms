@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<<<<<<< HEAD
   <head>
     <meta charset="UTF-8" />
     <title>Manajemen Data Mahasiswa</title>
     <style>
       body {
         font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
+        background-color: red;
         margin: 0;
         padding: 0;
         display: flex;
@@ -16,27 +15,11 @@
         height: 100vh;
         position: relative;
       }
-=======
-<head>
-    <meta charset="UTF-8">
-    <title>Create Student</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
->>>>>>> 07078b6a40347332f8145029305261c3a0959295
 
       .top-background {
         width: 100%;
-        height: 150px;
-        background-image: url("../image/bg.jpg");
+        height: 200px;
+        background-color: black;
         background-size: cover;
         background-position: center;
         position: absolute;
@@ -46,8 +29,8 @@
 
       .bottom-background {
         width: 100%;
-        height: 150px;
-        background-image: url("../image/bg.jpg");
+        height: 200px;
+        background-color: orange;
         background-size: cover;
         background-position: center;
         position: absolute;
@@ -105,7 +88,6 @@
         color: #333;
       }
     </style>
-<<<<<<< HEAD
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -138,17 +120,3 @@
     <div class="bottom-background"></div>
   </body>
 </html>
-=======
-</head>
-<body>
-<form method="post" action="/students/createStudent" th:object="${newStudent}">
-    <h2>Create Student</h2>
-    <input type="text" th:field="*{nama}" placeholder="Nama">
-    <input type="number" th:field="*{nim}" placeholder="NIM">
-    <input type="text" th:field="*{alamat}" placeholder="Alamat">
-    <input type="text" th:field="*{tanggallahir}" placeholder="Tanggal Lahir">
-    <input type="submit" value="Simpan">
-</form>
-</body>
-</html>
->>>>>>> 07078b6a40347332f8145029305261c3a0959295
